@@ -1,0 +1,154 @@
+body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: antiquewhite;
+    margin: 0;
+  }
+  
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center; 
+    overflow:auto;
+  }
+  
+  .title-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    height: 70vh;
+    width: 40vw;
+    margin: 10px;
+  }
+  
+  .registration-form input {
+    width: 90%;
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .registration-form{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 15vw;
+    margin: 1vw;
+    border: 2px solid #000;
+    border-radius: 7px;
+  }
+  
+  
+  .registration-form button {
+    background-color: #f08080;
+    color: #fff;
+    border: none;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .registration-form button:hover{
+    background-color: darkred;
+  }
+  
+  .data-table {
+    width: 20vw;
+    border-collapse: collapse;
+    margin: 20px;
+    
+  }
+  
+  .data-table-container {
+    max-height: 400px;
+    overflow-y: auto; /* Enable vertical scroll if content exceeds the height */
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .data-table tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  .section-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    min-width: 40vw;
+    min-height: 70vh;
+    margin: 10px;
+  }
+
+  .theater {
+    display: flex;
+    max-width: 45vw;
+  }
+  
+  .seat {
+    width: 35px;
+    height: 35px;
+    background-color:lightcoral;
+    margin: 5px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 40px;
+    border: 1px solid #666;
+    cursor: pointer;
+  }
+  
+.seat.selected {
+    background-color:brown;
+    color: #fff;
+}
+
+.selected-row {
+  background-color:rgb(201, 114, 74); 
+}
+  
+.button{
+  background-color: #f08080;
+    color: #fff;
+    border: none;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.button:hover{
+  background-color: darkred;
+}

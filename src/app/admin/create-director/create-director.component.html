@@ -1,0 +1,69 @@
+<body>
+  <div class= "section-container">
+  <div class="section">
+    <div class="registration-form">
+      <h2>Director Registration</h2>
+      <input type="text" placeholder="Name" [(ngModel)]="directorName">
+      <input type="text" placeholder="Surname" [(ngModel)]="directorSurname">
+      <input type="text" placeholder="UMCN" [(ngModel)]="directorUMCN">
+      <input type="text" placeholder="Title" [(ngModel)]="directorTitle">
+      <button (click)="createDirector()">Register Director</button>
+    </div>
+    <div class="data-table-container">
+      <h2>Directors</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>UMCN</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Add data rows dynamically here using Angular data binding -->
+        <tr *ngFor="let director of directors">
+          <td>{{ director.name }}</td>
+          <td>{{ director.surname }}</td>
+          <td>{{ director.umcn }}</td>
+          <td>{{ director.title }}</td>
+        </tr>
+        
+        <!-- Add more director rows here -->
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+<div class= "section-container">
+  <div class="section">
+    <div class="registration-form">
+      <h2>Actor Registration</h2>
+      <input type="text" placeholder="Name" [(ngModel)]="actorName">
+      <input type="text" placeholder="Surname" [(ngModel)]="actorSurname">
+      <input type="text" placeholder="UMCN" [(ngModel)]="actorUMCN">
+      <button (click)="createActor()">Register Actor</button>
+    </div>
+    <div class="data-table-container">
+      <h2>Actors</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>UMCN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actor of actors">
+          <td>{{ actor.name }}</td>
+          <td>{{ actor.surname }}</td>
+          <td>{{ actor.umcn }}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+</body>

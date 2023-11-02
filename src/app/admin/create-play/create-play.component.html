@@ -1,0 +1,65 @@
+<!-- play-form.component.html -->
+<div class="div">
+    <div class="section">
+    <h2>Create a Play</h2>
+      <div class="form-group">
+        <input type="text" placeholder="Play Name" id="playName" name="playName" [(ngModel)]="play.name" required>
+      </div>
+  
+      <div class="form-group">
+        <label >Select Scene</label>
+        <select id="sceneSelect" name="sceneSelect" [(ngModel)]="play.scene" required class="dropdown">
+          <option *ngFor="let scene of scenes" [ngValue]="scene.name">{{ scene.name }}</option>
+        </select>
+      </div>
+      <div class="blac-border">
+        <label for="directorSelect">Select Genres</label>
+        <div>
+            <label *ngFor="let genre of genres" class="labelcb">
+                <input type="checkbox" name="genre" [(ngModel)]="genre.checked"><p class="textt">{{ genre.name }}</p> 
+            </label>
+        </div>
+    </div>
+    <div class="blac-border">
+        <label for="directorSelect">Select Directors</label>
+        <div>
+            <label *ngFor="let director of directors" class="labelcb">
+                <input type="checkbox" name="dir" [(ngModel)]="director.checked"><p class="textt">{{ director.name }} {{director.surname}}</p> 
+            </label>
+        </div>
+    </div>
+      <button (click)="savePlay()">Create Play</button>
+</div>
+    <div class="section">
+      <h2>Roles and Actors</h2>
+        <div class="form-group">
+          <input type="text" placeholder="Role Name" id="roleName" name="roleName" [(ngModel)]="role.roleName" required>
+        </div>
+        <div class="form-group">
+            <textarea type="text" placeholder="Role Description" class="description" [(ngModel)]="role.description" required>
+            </textarea>
+        <div class="form-group">
+          <label for="actorSelect">Select Actor for Role</label>
+          <select id="actorSelect" name="actorSelect" [(ngModel)]="actor" required class="dropdown">
+            <option *ngFor="let actor of actors" [ngValue]="actor" >{{ actor.name }} {{actor.surname}} </option>
+          </select>
+          </div>
+          <button (click)="attachRole()">Attach Role</button>
+      <h2>Roles and Actors</h2>
+        <table>
+            <tr>
+                <th>Role Name</th>
+                <th>Actor</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let r of play.roles">
+                <td>{{ r.roleName }}</td>
+                <td>{{ r.actor.name }} {{r.actor.surname}}</td>
+                <td class="tdspec"><button class="smallerbutton" (click)="deleteFromRoles(r)">delete</button></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+       
+
+  

@@ -1,0 +1,57 @@
+
+.header {
+    background-image: url("../../assets/theater1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+
+    width: 100%;
+  }
+  
+  .header h1 {
+    font-size: 85px;
+    color:blanchedalmond;
+    font-family: Copperplate, Papyrus, fantasy;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 20px;
+  }
+  
+  .header nav a {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color: blanchedalmond;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'YourCoolFont', sans-serif;
+    padding: 10px;
+  }
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header nav a:hover {
+    text-decoration:dashed;
+    color:darkslategray;
+    border: 5px solid darkslategray;
+  }
+  

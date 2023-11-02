@@ -1,0 +1,54 @@
+<body>
+    <div class= "section-container">
+    <div class="section">
+      <div class="registration-form">
+        <h2>Create Scene</h2>
+        <input type="text" placeholder="Name" [(ngModel)]="newSceneName">
+        <input type="text" placeholder="Number of rows" [(ngModel)]="newSceneRows">
+        <input type="text" placeholder="Seats in row" [(ngModel)]="newSceneSeatsInRow">
+        <button (click)="createScene()" >Create scene</button>
+      </div>
+      <div class="data-table-container">
+        <h2>Scenes</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Seat number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Add data rows dynamically here using Angular data binding -->
+          <tr *ngFor = "let scene of scenes; let i = index" (click)="getSeatsForSecne(scene.name);selectRow(i,scene.name)"
+          [ngClass]="{'selected-row': i === selectedRowIndex}">
+            <td>{{scene.name}}</td>
+            <td>{{scene.numberOfSeats}}</td>
+          </tr>
+          <!-- Add more director rows here -->
+        </tbody>
+      </table>
+      <button class="button" (click)="deleteScene()" >Delete selected scene</button>
+    </div>
+    </div>
+  </div>
+  <div class="section-scene">
+  <div class= "section-container">
+      
+        <h2>Scene looks: {{selectedScene}}</h2>
+        <div class="theater" >
+          <div *ngFor="let row of seatData" class="row">
+            <div *ngFor="let seat of row" >
+              <div class="seat" [style.visibility]="seat.exists ? 'visible' : 'hidden'" [class.selected]="seat.selected" 
+              (click)="seatSelected(seat)">
+                {{ seat.number }}, {{ seat.row }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="button" (click)="deleteSelectedSeats()">Delete selected seats</button>
+        </div>
+      </div>
+  </div>
+</body>
+  

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: antiquewhite; overflow:auto;} 
+button {
+    background-color: #f08080;
+    color: #fff;
+    border: none;
+    width: 200px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }

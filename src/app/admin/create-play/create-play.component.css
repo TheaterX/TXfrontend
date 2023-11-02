@@ -1,0 +1,197 @@
+/* play-form.component.css */
+
+.div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: antiquewhite;
+    font-size:20px;
+}
+.play-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .blac-border{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  margin: 1vw;
+  height: 20vh;
+  border: 2px solid #000;
+  border-radius: 7px;
+  overflow: auto;
+}
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    height: auto;
+    min-height: 70vh;
+    width: 40vw;
+    margin: 10px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input, select {
+    width: 20vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  table {
+    width: 40vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    padding: 10px;
+    text-align: left;
+  }
+
+  td{
+    text-align: left;
+    padding-left: 5px;
+    width: 5vw;
+  }
+
+  .tdspec{
+    width: 5vw;
+    max-width: 50px;
+    align-items: center;
+    padding-left: 0%;
+    text-align: center;
+  }
+  
+  /* play-form.component.css */
+/* ... your existing styles ... */
+
+.roles-section {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .roles-section h2 {
+    margin-top: 0;
+  }
+  
+  .roles-section form {
+    margin-bottom: 20px;
+  }
+  
+  .roles-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .roles-section table, .roles-section th, .roles-section td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+  }
+  
+  .roles-section th, .roles-section td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+
+  /* Style the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+}
+.dropdown:hover{
+    cursor: pointer;
+}
+/* Style the button that opens the dropdown */
+.dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropbtn:hover {
+    background-color: #f08080;
+    
+}
+
+  
+label{
+    margin:5px
+}
+
+input[type=text]{
+    font-size:20px;
+    height: 30px;
+}
+
+.textt{
+    width: 27vw;
+    margin: 5px;
+    text-align: left;
+}
+
+input[type=checkbox]{
+    width: 20px;
+    margin: 2px;
+}
+.labelcb{
+    display: flex;
+    margin: 2px;
+    padding: 0px;
+    width: 28vw;
+    justify-content: space-between;
+}
+
+.description{
+    width: 500px;
+    font-size: 20px;
+    padding-bottom: 3vh;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+.smallerbutton{
+    width: 80px;
+    justify-content: center;
+    margin: 3px;
+}
+
+textarea{
+    max-width: 40vw;
+}
