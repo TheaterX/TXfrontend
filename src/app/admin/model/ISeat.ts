@@ -3,4 +3,7 @@ export interface ISeat{
     number: number;
     exists: boolean;
     selected: boolean;
+    taken?: boolean;
+    username?: string;
+    yours?: boolean;
   }

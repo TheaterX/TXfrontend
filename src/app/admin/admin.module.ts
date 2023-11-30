@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ScenesComponent } from './scenes/scenes.component';
 import { CreatePlayComponent } from './create-play/create-play.component';
+import { RepertoiresComponent } from './repertoires/repertoires.component';
+import { SchedulingPlayComponent } from './scheduling-play/scheduling-play.component';
 
 const routes = [
   {
@@ -21,6 +23,14 @@ const routes = [
       {
         path: 'create-play',
         component: CreatePlayComponent
+      },
+      {
+        path: 'repertoires',
+        component: RepertoiresComponent
+      },
+      {
+        path: 'scheduling-play',
+        component: SchedulingPlayComponent
       }
 ]
   }
@@ -31,7 +41,9 @@ const routes = [
   declarations: [
     CreateDirectorComponent,
     ScenesComponent,
-    CreatePlayComponent
+    CreatePlayComponent,
+    RepertoiresComponent,
+    SchedulingPlayComponent,
   ],
   imports: [
     CommonModule,

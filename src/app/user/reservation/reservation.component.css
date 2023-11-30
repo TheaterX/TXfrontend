@@ -1,0 +1,122 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    height: auto;
+    margin: 30px;
+    min-height: 70vh;
+    width: 45vw;
+    font-size: 26px;
+  }
+
+  body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: antiquewhite;
+    margin: 0;
+  }
+
+  
+
+  .section-scene{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    min-width: 40vw;
+    min-height: 70vh;
+    margin: 10px;
+  }
+
+  .data-table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 20px;
+    
+  }
+  
+  .data-table-container {
+    max-height: 400px;
+    overflow-y: auto; /* Enable vertical scroll if content exceeds the height */
+  }
+  
+  .data-table th,
+  .data-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .data-table tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+
+  .selected-row {
+    background-color:rgb(201, 114, 74); 
+  }
+
+  .seat {
+    width: 35px;
+    height: 35px;
+    background-color:lightcoral;
+    margin: 5px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 40px;
+    border: 1px solid #666;
+    cursor: pointer;
+  }
+
+  .theater {
+    display: flex;
+    max-width: 45vw;
+  }
+
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center; 
+    overflow:auto;
+  }
+
+  .seat.selected {
+    background-color:brown;
+    color: #fff;
+}
+
+  .seat.yours{
+    background-color:yellowgreen;
+    user-select: none;
+  }
+
+  .seat.taken{
+    background-color: #666;
+    user-select: none;
+}
+
+  .seat.taken:hover, .seat.yours:hover{
+    cursor: auto;
+  }
+
+  .legend{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+  }

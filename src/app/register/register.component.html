@@ -1,0 +1,37 @@
+<!-- login.component.html -->
+<body>
+    <div class="section">
+      <div class="registration-form">
+        <h2>Register</h2>
+        <div class="form-group">
+          <label>Name:</label>
+          <input (change)="check()" type="text" [(ngModel)]="name" name="name" required minlength="3">
+          <div *ngIf="name == ''" class="error-message">Name is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label>Surname:</label>
+          <input (change)="check()" type="text" [(ngModel)]="surname" name="surname" required minlength="3">
+          <div *ngIf="surname == ''" class="error-message">Surname is required.</div>
+        </div>
+  
+        <div class="form-group">
+          <label>Username:</label>
+          <input (change)="check()" type="text" [(ngModel)]="username" name="username" required minlength="6">
+          <div *ngIf="username == ''" class="error-message">Username is required.</div>        </div>
+  
+        <div class="form-group">
+          <label>Password:</label>
+          <input (change)="check()" type="password" [(ngModel)]="password" name="password" required minlength="8">
+          <div *ngIf="password == ''" class="error-message">Password is required and must have 6+ characters.</div>        </div>
+  
+        <div class="form-group">
+          <label>Birth Date:</label>
+          <input (change)="check()" type="date" [(ngModel)]="date" name="date" required>
+          <div *ngIf="date == ''" class="error-message">Pick a birth date.</div>
+        </div>
+        <button (click)="register()" [disabled]="!valid">Register</button>
+      </div>
+    </div>
+  </body>
+  

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../service/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-play',
@@ -8,12 +9,14 @@ import { AdminService } from '../service/admin.service';
 })
 export class CreatePlayComponent implements OnInit{
   constructor(
-    private readonly adminService:AdminService
+    private readonly adminService:AdminService,
+    private readonly router:Router
   ){}
 
   play: any = { genres: [],directors: [] ,roles: [], grade: 3}; // Initialize the Play object
   role: any = {}; // Initialize the Role object
   actor:any = {};
+  description:string  = '';
   scenes: any[] = [ /* Replace with your actual scene data */ ];
   genres: any[] = [ /* Replace with your actual genre data */ ];
   directors: any[] = [ /* Replace with your actual director data */ ];
@@ -23,6 +26,7 @@ export class CreatePlayComponent implements OnInit{
     this.play.directors = this.directors.filter(director => director.checked).map(director => director.umcn);
     this.play.genres = this.genres.filter(genre => genre.checked).map(genre => genre.name);
     this.adminService.createPlay(this.play).subscribe();
+    this.router.navigate(['/admin/repertoires']);
     console.log('Saved Play:', this.play);
   }
 
@@ -40,7 +44,9 @@ export class CreatePlayComponent implements OnInit{
       if(this.role.roleName === this.play.roles[i].roleName)
         return;
     }
+    this.role.description = this.description;
     this.play.roles.push(this.role);
+    this.description = '';
     this.role = {};
   }
 

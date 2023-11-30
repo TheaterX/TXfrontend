@@ -9,7 +9,9 @@
       <div class="form-group">
         <label >Select Scene</label>
         <select id="sceneSelect" name="sceneSelect" [(ngModel)]="play.scene" required class="dropdown">
-          <option *ngFor="let scene of scenes" [ngValue]="scene.name">{{ scene.name }}</option>
+            <ng-container *ngFor="let scene of scenes">
+          <option *ngIf="scene.name !='Travels'" [ngValue]="scene.name">{{ scene.name }}</option>
+        </ng-container>
         </select>
       </div>
       <div class="blac-border">
@@ -23,9 +25,15 @@
     <div class="blac-border">
         <label for="directorSelect">Select Directors</label>
         <div>
-            <label *ngFor="let director of directors" class="labelcb">
-                <input type="checkbox" name="dir" [(ngModel)]="director.checked"><p class="textt">{{ director.name }} {{director.surname}}</p> 
-            </label>
+            <ng-container *ngFor="let director of directors">
+            <label  class="labelcb">
+                <ng-container *ngIf="director.name != 'Guest'">
+                <input  type="checkbox" name="dir" [(ngModel)]="director.checked"><p class="textt">{{ director.name }} {{director.surname}}</p> 
+              
+            </ng-container>
+        </label>  
+            </ng-container>
+            
         </div>
     </div>
       <button (click)="savePlay()">Create Play</button>
@@ -36,7 +44,7 @@
           <input type="text" placeholder="Role Name" id="roleName" name="roleName" [(ngModel)]="role.roleName" required>
         </div>
         <div class="form-group">
-            <textarea type="text" placeholder="Role Description" class="description" [(ngModel)]="role.description" required>
+            <textarea type="text" placeholder="Role Description" class="description" [(ngModel)]="description" required>
             </textarea>
         <div class="form-group">
           <label for="actorSelect">Select Actor for Role</label>

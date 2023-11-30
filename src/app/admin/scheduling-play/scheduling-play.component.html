@@ -1,0 +1,106 @@
+<body>
+<div class="section">
+<h1>Schedule play <br> select by your priorities:
+</h1>
+<div *ngIf="guest === false" class="lab">
+    <label >Select repertoire:</label>
+    <select class="dropdown" (change)="search()"  [(ngModel)]="selectedYear">
+      <option [ngValue]=0 disabled selected hidden>Choose year</option>
+      <option *ngFor="let year of years" >{{ year }}</option>
+    </select>
+  </div>
+<div *ngIf="guest === false" class="lab">
+  <label >Select Play:</label>
+  <select class="dropdown" (change)="search()" [(ngModel)]="selectedPlay" [disabled]="selectedYear === 0">
+    <option [ngValue]="-1" disabled selected hidden>Select repertoire first</option>
+    <ng-container *ngFor="let play of plays">
+        <ng-container *ngIf="play.playId !== 802">
+          <option [ngValue]="play.playId">
+            {{ play.playName }} ({{ play.forScene }})
+          </option>
+        </ng-container>
+      </ng-container>
+  </select>
+</div>
+<div *ngIf="guest === true" class="lab">
+    <label >Guest Play Name:</label>
+    <input [(ngModel)]="guestPlayName" class="texxt" type="text"> 
+  </div>
+<div *ngIf="travels === false" class="lab">
+  <label >Select Scene:</label>
+  <select class="dropdown" (change)="search()" [(ngModel)]="selectedScene" >
+    <option [ngValue]="null" disabled selected hidden>Choose scene</option>
+    <ng-container *ngFor="let scene of scenes">
+        <ng-container *ngIf="scene.name !== 'Travels'">
+          <option [ngValue]="scene.name">
+            {{ scene.name }} / {{scene.seatNumber}} seats
+          </option>
+        </ng-container>
+      </ng-container>
+  </select>
+</div>
+<div class="lab">
+  <label >Select Date:</label>
+  <select class="dropdown" (change)="search()" [(ngModel)]="selectedDate">
+    <option [ngValue]="null" disabled selected hidden>Choose date</option>
+    <option *ngFor="let date of dates" >{{ date }}</option>
+  </select>
+</div>
+<div class="lab">
+    <div>
+    <label >Select Time:</label>
+</div>
+<div class="lab1">
+    <select id="hour" name="hour" [(ngModel)]="hours">
+        <option *ngFor="let hour of hoursRange" [value]="hour">{{ hour }}</option>
+      <!-- Add more hour options as needed -->
+    </select>
+    <p>:</p>
+    <select id="minute" name="minute">
+      <option value="00">00</option>
+      <option value="15">15</option>
+      <option value="30">30</option>
+      <option value="45">45</option>
+      <!-- Add more minute options as needed -->
+    </select>
+</div>
+  </div>
+<div class="lab">
+  <label for="premiere">Premiere:</label>
+  <input type="checkbox"  [(ngModel)]="premiere">
+</div>
+<div class="lab">
+  <label for="guest">Guest:</label>
+  <input [disabled]="travels" type="checkbox"  [(ngModel)]="guest">
+</div>
+<div class="lab">
+  <label for="travels">Travels:</label>
+  <input [disabled]="guest" type="checkbox" (change)="deselectScene()" [(ngModel)]="travels">
+</div>
+
+<div class="lab">
+    <button (click)="reset()">Reset</button>
+    <button (click)="sub()">Submit</button>
+  </div>
+</div>
+
+<div class="section2">
+    <h2>Scheduled Plays in future</h2>
+    <table>
+      <tr>
+        <th>Play Name</th>
+        <th>Scene</th>
+        <th>Date</th>
+        <th>Free seats</th>
+        <th>Cancel</th>
+      </tr>
+      <tr *ngFor="let play of scheduledPlays">
+        <td>{{ play.playName }}</td>
+        <td>{{ play.sceneName }}</td>
+        <td>{{ play.date }}</td>
+        <td>{{ play.freeSeats }}</td>
+        <td class="tdspec"><button class="smallerbutton">cancel play</button></td>
+      </tr>
+    </table>
+</div>
+</body>

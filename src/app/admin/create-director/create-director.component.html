@@ -22,12 +22,14 @@
       </thead>
       <tbody>
         <!-- Add data rows dynamically here using Angular data binding -->
-        <tr *ngFor="let director of directors">
+        <ng-container  *ngFor="let director of directors">
+        <tr *ngIf="director.name != 'Guest'">
           <td>{{ director.name }}</td>
           <td>{{ director.surname }}</td>
           <td>{{ director.umcn }}</td>
           <td>{{ director.title }}</td>
         </tr>
+      </ng-container>
         
         <!-- Add more director rows here -->
       </tbody>

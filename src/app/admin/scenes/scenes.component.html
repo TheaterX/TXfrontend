@@ -19,11 +19,13 @@
         </thead>
         <tbody>
           <!-- Add data rows dynamically here using Angular data binding -->
-          <tr *ngFor = "let scene of scenes; let i = index" (click)="getSeatsForSecne(scene.name);selectRow(i,scene.name)"
+          <ng-container *ngFor = "let scene of scenes; let i = index">
+          <tr *ngIf="scene.name !== 'Travels'"  (click)="getSeatsForSecne(scene.name);selectRow(i,scene.name)"
           [ngClass]="{'selected-row': i === selectedRowIndex}">
             <td>{{scene.name}}</td>
             <td>{{scene.numberOfSeats}}</td>
           </tr>
+        </ng-container>
           <!-- Add more director rows here -->
         </tbody>
       </table>
@@ -46,7 +48,7 @@
           </div>
         </div>
         <div>
-          <button class="button" (click)="deleteSelectedSeats()">Delete selected seats</button>
+          <button class="button" *ngIf="selectedScene != ''" (click)="deleteSelectedSeats()">Delete selected seats</button>
         </div>
       </div>
   </div>

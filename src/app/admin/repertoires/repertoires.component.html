@@ -1,0 +1,40 @@
+<div class="maindiv">
+  <div class="section">
+    <div class="row">
+    <label for="year-dropdown">Select Year:</label>
+    <select class="dropdown" [(ngModel)]="selectedYear" (change)="loadPlaysForYear()">
+        <option *ngFor="let year of years">{{ year }}</option>
+    </select>
+    <button class="smallerbutton" (click)="newRepertoire()">make new one</button>
+</div>
+    <h2>Plays in the Selected Year</h2>
+    <div class="data-table-container">
+    <table>
+      <tr>
+        <th>Play Name</th>
+        <th>Director</th>
+      </tr>
+      <tr *ngFor="let play of playsInYear">
+        <td>{{ play.name }}</td>
+        <td>{{ play.director }}</td>
+        <td class="tdspec"><button class="smallerbutton" (click)="removeFromPlaysList(play)">remove</button></td>
+      </tr>
+    </table>
+</div>
+    <button (click)="saveChenges()" >Save</button>
+</div>
+    <div class="section">
+    <h2>Plays that aren't on repertoire</h2>
+    <table>
+      <tr>
+        <th>Play Name</th>
+        <th>Director</th>
+      </tr>
+      <tr *ngFor="let play of allPlays">
+        <td>{{ play.name }}</td>
+        <td>{{ play.director }}</td>
+        <td class="tdspec"><button class="smallerbutton" (click)="addToPlaysList(play)">add</button></td>
+      </tr>
+      </table>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+.section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    height: auto;
+    margin: 30px;
+    min-height: 70vh;
+    width: 90vw;
+    font-size: 26px;
+  }
+
+  body{
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+  table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px;
+  }
+
+  .data-table-container {
+    width: 90%;
+    max-height: 400px;
+    overflow-y: auto; /* Enable vertical scroll if content exceeds the height */
+  }
+
+  th, td {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: left;
+    height: auto;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+
+.cube{
+    width: auto;
+}
+
+p{
+    font-size: 14px;
+}
+
+.tdspec{
+    width: auto;
+    max-width: 70px;
+    text-align: center;
+}
+.smallerbutton{
+    width: auto;
+    height: 70%;
+    margin: 0;
+    padding: 6px 6px;
+}

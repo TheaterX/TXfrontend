@@ -1,0 +1,60 @@
+<body>
+    <div class="section">
+        <h2>Scheduled Plays in future</h2>
+    <table class="data-table">
+        <tbody>
+      <tr>
+        <th>Play Name</th>
+        <th>Director</th>
+        <th>Scene</th>
+        <th>Date</th>
+        <th>Free seats</th>
+      </tr>
+      <ng-container *ngFor="let play of scheduledPlays ; let i = index" 
+       >
+      <ng-container *ngIf="play.sceneName !== 'Travels'">
+      <tr [ngClass]="{'selected-row': i === selectedRowIndex}" (click)="selectRow(i,play.playId,play.date,play.sceneName)">
+        <td>{{ play.playName }}</td>
+        <td>{{ play.directors }}</td>
+        <td>{{ play.sceneName }}</td>
+        <td>{{ play.date }}</td>
+        <td>{{ play.freeSeats }}</td>
+      </tr>
+    </ng-container>
+</ng-container>
+</tbody>
+    </table>
+    </div>
+    <div class="section-scene">
+      <div class=" legend">
+        <p>Free:</p>
+        <div class="seat"></div>
+        <p>Selected:</p>
+        <div class="seat" [class.selected]="true"></div>
+        <p>Yours:</p>
+        <div class="seat" [class.yours]="true"></div>
+        <p>Taken:</p>
+        <div class="seat" [class.taken]="true"></div>
+      </div>
+        <div class= "section-container">
+        <h2 *ngIf="selectedScene != ''">Scene looks: {{selectedScene}}</h2>
+        <h2 *ngIf="selectedScene == ''">Select play</h2>
+        <div class="theater" >
+          <div *ngFor="let row of seatData" class="row">
+            <div *ngFor="let seat of row" >
+              <div class="seat" [style.visibility]="seat.exists ? 'visible' : 'hidden'"  [class.yours]="seat.yours" [class.taken]="seat.taken" [class.selected]="seat.selected"  
+              (click)="seatSelected(seat)">
+                {{ seat.number }}, {{ seat.row }}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <button class="button" *ngIf="selectedScene != ''" (click)="reserveSeats()">Reserve selected seats</button>
+          {{text}}
+        </div>
+      </div>
+    </div>
+</body>
+  

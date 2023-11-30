@@ -2,15 +2,19 @@
     <h1>Theater X</h1>
     <nav>
       <div class="navbar-left">
-      <a routerLink="/home">Home</a>
-      <a routerLink="/admin/actors&directors">Actors & Directors</a>
-      <a routerLink="/admin/create-play">Plays</a>
-      <a routerLink="/about">Scheduled Plays</a>
-      <a routerLink="/admin/scenes">Scenes</a>
-
+      <a routerLink="/user/plays">Home</a>
+      <a *ngIf="isAdmin" routerLink="/admin/actors&directors">Actors & Directors</a>
+      <a *ngIf="isAdmin" routerLink="/admin/create-play">Create Play</a>
+      <a *ngIf="isAdmin" routerLink="/admin/repertoires">Repertoires</a>
+      <a *ngIf="isAdmin" routerLink="/admin/scheduling-play">Scheduling Play</a>
+      <a *ngIf="isAdmin" routerLink="/admin/scenes">Scenes</a>
+      <a *ngIf="isUser" routerLink="/user/reservation">Reservation</a>
+      <a *ngIf="isUser" routerLink="/user/your-reservations">Your Reservations</a>
     </div>
     <div class="navbar-right">
-      <a routerLink="/about">Logout</a>
+      <a (click)="logOut()" *ngIf="isLoged" routerLink="/about">Logout</a>
+      <a *ngIf="!isLoged" routerLink="">Login</a>
+      <a *ngIf="!isLoged" routerLink="/register">Register</a>
     </div>
       <!-- Add more links as needed -->
     </nav>

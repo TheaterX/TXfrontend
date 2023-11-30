@@ -1,0 +1,35 @@
+<body>
+    <div class="section2">
+        <h2>Play: {{playName}}</h2>
+    <div class="section">
+        <div > 
+            <div>
+            <h4>Director/s:</h4>
+             <p> {{play.directors}}</p>
+            </div>
+            <div>
+            <h4>Genre/s:</h4>
+            <p> {{play.genres}}</p>
+            </div>
+            <div>
+            <h4>Awards:</h4>
+            <p> {{play.awards}}</p>
+            </div>
+            <div>
+            <h4>Grade:</h4>
+            <p> {{play.grade}}</p>
+            </div>
+        </div>
+        <div class="vertical-line"></div>
+    <div>
+        <h3>Roles and Actors</h3>
+        <table>
+            <tr *ngFor="let r of play.roles">
+                <td class="td1">{{ r.role }}:   </td>
+                <p>{{ r.actors }}</p>
+            </tr>
+        </table>
+    </div>
+    </div>
+</div>
+</body>

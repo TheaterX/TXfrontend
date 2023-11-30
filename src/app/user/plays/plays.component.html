@@ -1,0 +1,21 @@
+<body>
+<div class="section2">
+    <h2>Scheduled Plays</h2>
+    <table>
+      <tr>
+        <th>Play Name</th>
+        <th>Scene</th>
+        <th>Date and time</th>
+        <th>Free seats</th>
+      </tr>
+      <ng-container *ngFor="let play of scheduledPlays">
+      <tr (click)="redirectToPlay(play.playId,play.playName)" *ngIf="play.sceneName != 'Travels'" >
+        <td>{{ play.playName }}</td>
+        <td>{{ play.sceneName }}</td>
+        <td>{{ play.date }}</td>
+        <td>{{ play.freeSeats }}</td>
+      </tr>
+    </ng-container>
+    </table>
+</div>
+</body>

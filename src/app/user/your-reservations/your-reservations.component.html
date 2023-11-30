@@ -1,0 +1,34 @@
+<body>
+    <div class="section2">
+        <h2>Your Reservations</h2>
+        <table>
+          <tr>
+            <th>Play Name</th>
+            <th>Scene</th>
+            <th>Date and time</th>
+            <th>Number of seats</th>
+            <th>Seats <p> (row, number) </p></th>
+            <th>Cancell</th>
+          </tr>
+          <ng-container *ngFor="let reservation of yourReservations">
+          <tr >
+            <td>{{ reservation.play }}</td>
+            <td>{{ reservation.scene }}</td>
+            <td>{{ reservation.date }}</td>
+            <td>{{ reservation.seatsN }}</td>
+            <td >
+                <ng-container  *ngFor="let seat of reservation.seats ">
+                    <div class="cube"> {{seat.id.number}}, {{seat.id.row }} </div>
+                </ng-container>
+            </td>
+            <td  class="tdspec"><button (click)="cancelRes(reservation.id)" *ngIf="!reservation.canceled" class="smallerbutton">cancel reservation
+            </button>
+                <ng-container *ngIf="reservation.canceled">
+                    canceled
+                </ng-container>
+            </td>
+          </tr>
+        </ng-container>
+        </table>
+    </div>
+    </body>
